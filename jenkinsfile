@@ -30,7 +30,7 @@ stages{
         }
       }
       stage ('DEPLOY') {
-        agent { label 'lab2' }
+        agent any
         steps {
         script {
          if(params.stage == 'deploy') 
@@ -59,7 +59,7 @@ stages{
         }
       }
       stage ('TESTING2') {
-        agent { label 'master' }
+        agent any
         steps {
            echo "this is to test testing2 stage"
         }

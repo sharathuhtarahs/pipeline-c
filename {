@@ -1,0 +1,171 @@
+Script started on 2022-08-16 08:09:35+00:00
+         if(params.stage == 'deploy') 
+         {
+           echo "this is to test deploy stage"
+           } else {
+           echo "skipping deploy stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING1') {
+        agent any
+        steps {
+        script {
+         if(params.stage == 'testing1') 
+         {
+           sh '''
+           echo "this is to test testing stage"
+           echo "$git_repo"
+           '''
+           } else {
+           echo "skipping testing1 stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING2') {
+        agent { label 'master' }
+        steps {
+           echo "this is to test testing2 stage"
+        }
+      }
+      }
+}       
+}
+}]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$          if(params.stage == 'deploy') 
+>          {
+>            echo "this is to test deploy stage"
+>            } else {
+bash: syntax error near unexpected token `else'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            echo "skipping deploy stage....."
+skipping deploy stage....
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       stage ('TESTING1') {
+bash: syntax error near unexpected token `'TESTING1''
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         agent any
+bash: agent: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         steps {
+bash: steps: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         script {
+Script started, file is {
+         if(params.stage == 'testing1') 
+         {
+           sh '''
+           echo "this is to test testing stage"
+           echo "$git_repo"
+           '''
+           } else {
+           echo "skipping testing1 stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING2') {
+        agent { label 'master' }
+        steps {
+           echo "this is to test testing2 stage"
+        }
+      }
+      }
+}       
+}
+}]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$          if(params.stage == 'testing1') 
+>          {
+>            sh '''
+>            echo "this is to test testing stage"
+>            echo "$git_repo"
+>            '''
+>            } else {
+bash: syntax error near unexpected token `else'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            echo "skipping testing1 stage....."
+skipping testing1 stage....
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-3age....."
+skipping deploy stage....
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       stage ('TESTING1') {
+bash: syntax error near unexpected token `'TESTING1''
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         agent any
+bash: agent: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         steps {
+bash: steps: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         script {
+Script started, file is {
+         if(params.stage == 'testing1') 
+         {
+           sh '''
+           echo "this is to test testing stage"
+           echo "$git_repo"
+           '''
+           } else {
+           echo "skipping testing1 stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING2') {
+        agent { label 'master' }
+        steps {
+           echo "this is to test testing2 stage"
+        }
+      }
+      }
+}       
+}
+}]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$          if(params.stage == 'testing1') 
+>          {
+>            sh '''
+>            echo "this is to test testing stage"
+>            echo "$git_repo"
+>            '''
+>            } else {
+bash: syntax error near unexpected token `else'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            echo "skipping testing1 stage....."
+skipping testing1 stage....
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       stage ('TESTING2') {
+bash: syntax error near unexpected token `'TESTING2''
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         agent { label 'master' }
+bash: agent: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         steps {
+bash: steps: command not found
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$            echo "this is to test testing2  stage"
+this is to test testing2 stage
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$         }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$       }
+bash: syntax error near unexpected token `}'
+]0;ec2-user@ip-172-31-5-200:~/git-practice/pipeline-c[ec2-user@ip-172-31-5-200 pipeline-c]$ }       
+bash: syntax error near unexpected token `}'
+]0;ec2-us
