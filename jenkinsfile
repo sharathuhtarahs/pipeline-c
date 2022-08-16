@@ -1,0 +1,70 @@
+pipeline{
+agent none
+environment {
+  branch = 'main'
+  git_repo = "https://github.com/vinay542486/central-repo-c-project.git"
+}
+parameters {
+  string(name: 'branchnew', description: 'enter the branch to build', defaultValue: 'main')
+  string(name: 'git_repo', description: 'enter the repo url', defaultValue: 'https://github.com/vinay542486/testrepo.git')
+  choice(name: 'stage', choices: ['build','deploy','testing1'], description: 'stages to build')
+}
+stages{
+  stage('all') {
+  parallel {
+      stage ('BUILD') {
+        agent any
+         steps {
+         script {
+         if(params.stage == 'build') 
+         {
+           sh '''
+           echo "this is to test build stage"
+           echo "$branch"
+           echo "$branchnew"
+           '''
+           } else {
+           echo "skipping build stage...."
+           }
+           }
+        }
+      }
+      stage ('DEPLOY') {
+        agent { label 'lab2' }
+        steps {
+        script {
+         if(params.stage == 'deploy') 
+         {
+           echo "this is to test deploy stage"
+           } else {
+           echo "skipping deploy stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING1') {
+        agent any
+        steps {
+        script {
+         if(params.stage == 'testing1') 
+         {
+           sh '''
+           echo "this is to test testing stage"
+           echo "$git_repo"
+           '''
+           } else {
+           echo "skipping testing1 stage...."
+           }
+           }
+        }
+      }
+      stage ('TESTING2') {
+        agent { label 'master' }
+        steps {
+           echo "this is to test testing2 stage"
+        }
+      }
+      }
+}       
+}
+}
